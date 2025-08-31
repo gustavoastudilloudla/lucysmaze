@@ -1,6 +1,6 @@
 # Lucy's Maze
 
-Juego de laberinto estilo “desliza hasta chocar” hecho con Phaser 3.80.x. Controlas a Lucy por una cuadrícula, recoges monedas, evitas trampas y esquivas enemigos a medida que subes de nivel. Música de fondo se detecta automáticamente desde `sound/bg/`.
+Juego de laberinto estilo “desliza hasta chocar” hecho con Phaser 3.80.x. Controlas a Lucy por una cuadrícula, recoges monedas, evitas trampas y esquivas enemigos a medida que subes de nivel.
 
 ## Cómo Jugar
 - Flechas: mueve a Lucy (izquierda, derecha, arriba, abajo). Se desliza hasta encontrar un obstáculo.
@@ -9,8 +9,6 @@ Juego de laberinto estilo “desliza hasta chocar” hecho con Phaser 3.80.x. Co
 - Objetivo: recoge monedas, encuentra la salida parpadeante y sube de nivel. Desde nivel 5 aparecen enemigos.
 
 ## Ejecutar Localmente
-- Opción Python: `python -m http.server 8000` y abre `http://localhost:8000/`.
-- Opción Node: `npx serve .` y abre la URL que muestre.
 - No hay build; es un sitio estático.
 
 ## Implementación
@@ -32,7 +30,8 @@ Juego de laberinto estilo “desliza hasta chocar” hecho con Phaser 3.80.x. Co
 
 
 ## Breve Historia
-- Nacimiento: comenzó como un prototipo simple en Javascript para probar movimiento sobre cuadrícula y sprites de Lucy.
+- Nacimiento: comenzó como un prototipo simple en Javascript para probar movimiento sobre cuadrícula y sprites de mi chihuahua Lucy.
+- Inspirado parcialmente/libremente en las mecanicas del juego "The tomb of mask"
 - Primeros pasos: se añadió generación de laberintos, monedas, salida dinámica y contador de puntaje/nivel.
 - Sonido: se incorporó música de fondo con autodetección de pistas en `sound/bg/` y controles en pantalla.
 - Mejora técnica: se introdujeron optimizaciones (throttling, pooling, mapa de colisiones) y limpieza de eventos para robustez.
