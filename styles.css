@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centrar verticalmente */
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    transition: background-color 0.5s ease;
+    background-color: #a0a8ff; /* Color inicial de fondo */
+    height: 100vh; /* Para que el body ocupe toda la altura de la pantalla */
+}
+
+#game-container {
+    display: flex;
+    width: 600px;
+    height: 600px;
+    border: 4px solid #8890e0;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 20px rgba(136, 144, 224, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+#info-container {
+    text-align: center;
+    color: #5058a0;
+    background-color: #e0e4ff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #8890e0;
+    margin-top: 20px;
+    font-size: 16px;
+    width: 400px;
+}
+
+#restart-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #90e890;
+    color: #306030;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: #a8f0a8;
+    transform: scale(1.05);
+}
+
+#restart-button.prominent {
+    background-color: #f0a878;
+    font-size: 16px;
+    padding: 15px 25px;
+}
+
+#restart-button.prominent:hover {
+    background-color: #ffc0a0;
+}
+
+#game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e05858;
+    font-weight: bold;
+    font-size: 64px;
+    text-shadow: 2px 2px #ffd0d0;
+    display: none;
+    z-index: 10;
+}
+
+#audio-controls {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#toggle-music {
+    padding: 5px 10px;
+    background-color: #90e890;
+    color: #306030;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#toggle-music:hover {
+    background-color: #a8f0a8;
+}
+
+#volume-slider {
+    width: 100px;
+}
+
+/* Clases para cambios de color por nivel */
+.level-color-1 {
+    background-color: #a0a8ff;
+}
+
+.level-color-2 {
+    background-color: #ffa0a8;
+}
+
+.level-color-3 {
+    background-color: #a8ffa0;
+}
+
+/* Efecto CRT sutil */
+#game-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.3;
+    border-radius: 15px;
+}
+
+/* Efecto de línea de escaneo */
+@keyframes scanline {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 32px;
+    }
+}
+
+#game-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.1)
+    );
+    background-size: 100% 4px;
+    animation: scanline 1s linear infinite;
+    pointer-events: none;
+    opacity: 0.2;
+    border-radius: 15px;
+}
